@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="style.css" rel="stylesheet">
+    <script defer src="quiz.js"></script>
+    <title>Multiple Choice Quiz</title>
+</head>
+<body>
+    <div class="container">
+        <div id="questionContainer" class="hide">
+            <div id="question">Question</div>
+            <div id="timer">
+                <div id="counter">0</div>
+                <div id="btimeGauge"></div>
+                <div id="timeGauge"></div>
+            </div>
+            <div id="answerBtns" class="btn-grid">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="startBtn" class="start-btn btn">Start</button>
+            <button id="nextBtn" class="next-btn btn hide">Next</button>
+        </div>
+    </div>
+    <br>
+    <div class="container hide">
+        <nav>High Scores:</nav>
+    </div>
+</body>
+</html>
