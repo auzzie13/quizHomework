@@ -1,114 +1,35 @@
-var startButton = document.getElementById("startBtn");
-var nextButton = document.getElementById("nextBtn");
+//Variables
+var startBtnEl = document.getElementById("startBtn");
+var nextBtnEl = document.getElementById("nextBtn");
 var questionContainerEl = document.getElementById("questionContainer");
 var questionEl = document.getElementById("question");
-var answerButtonsEl = document.getElementById("answerBtns");
-var scoreEl = document.getElementById("score");
-var timeGauge = document.getElementById("timeGauge");
-var timeGauge = document.getElementById("timeGauge");
+var answerBtnsEl = document.getElementById("answerBtns");
 var randomQuestion;
 var currentQuestionIndex;
-var questionTime = 10;
-var gaugeWidth = 150;
-var count = 0;
-var gaugeProgressUnit = gaugeWidth/questionTime;
-var TIMER;
-var score = 0;
 
-startButton.addEventListener('click', startGame);
-nextButton.addEventListener('click', () => {
-    currentQuestionIndex++;
-    setNextQuestion();
-})
+//Commands
+startBtnEl.addEventListener('click', startGame);
 
-function startGame() {
-    startButton.classList.add('hide');
+
+//Functions
+function startGame () {
+    startBtnEl.classList.add('hide');
+    questionContainerEl.classList.remove('hide');
     randomQuestion = questions.sort(() => Math.random() - .5);
     currentQuestionIndex = 0;
-    questionContainerEl.classList.remove('hide');
-    setNextQuestion();
-
+    generateRandomQuestion();
 }
 
-function setNextQuestion() {
-    resetState();
-    showQuestion(randomQuestion[currentQuestionIndex]);
-}
-
-function showQuestion(question) {
-    questionEl.innerText = question.question
-    renderCounter();
-    TIMER = setInterval(renderCounter, 1000);
-    question.answers.forEach(answer => {
-        var button = document.createElement('button');
-        button.innerText = answer.text;
-        button.classList.add('btn');
-        if (answer.correct) {
-            button.dataset.correct = answer.correct;
-        }
-        button.addEventListener('click', selectAnswer);
- //       if (button.classList('btn correct') {
-         //   console.log(score++);
-   //    }
-        answerButtonsEl.appendChild(button);
-    });
-
-}
-
-function resetState() {
-    nextButton.classList.add('hide');
-    while (answerButtonsEl.firstChild) {
-        answerButtonsEl.removeChild(answerButtonsEl.firstChild);
-    };
-}
-
-function selectAnswer(e) {
-    var selectedButton = e.target;
-    var correct = selectedButton.dataset.correct;
-    setStatusClass(document.body, correct);
-    Array.from(answerButtonsEl.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct);
-    })
-    if (randomQuestion.length > currentQuestionIndex + 1) {
-    nextButton.classList.remove('hide');
-    } else {
-        startButton.innerText = "Restart";
-        startButton.classList.remove('hide');
-    }
-}
-
-function setStatusClass(element, correct) {
-    clearStatusClass(element);
-    if (correct) {
-        element.classList.add('correct');
-    } else {
-        element.classList.add('wrong');
-    }
-}
-
-function clearStatusClass(element) {
-    element.classList.remove('correct');
-    element.classList.remove('wrong');
-}
+function generateRandomQuestion() {
+    
+};
 
 
-//timer
-function renderCounter(){
-    if(count <= questionTime){
-        counter.innerHTML = count;
-        timeGauge.style.width = count * gaugeProgressUnit + "px";
-        count++
-    }else{
-        count = 0;
-        if(currentQuestionIndex < randomQuestion){
-            currentQuestionIndex++;
-            setNextQuestion();
-        }else{
-            clearInterval(TIMER);
-        }
-    }
-}
 
+
+
+
+//Questions
 var questions = [
     {
         question: "What Does HTML stand for?",
@@ -156,7 +77,7 @@ var questions = [
         ]
     },
     {
-        question: "How do you start javascript code?",
+        question: "How do you initiate javascript code?",
         answers: [
             {text: "With a link tag.", correct: false},
             {text: "With a div tag", correct: false},
