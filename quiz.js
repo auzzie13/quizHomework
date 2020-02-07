@@ -14,6 +14,7 @@ var count = 0;
 var gaugeProgressUnit = gaugeWidth/questionTime;
 var TIMER;
 var score = 0;
+var answerRight = true;
 
 startButton.addEventListener('click', startGame);
 nextButton.addEventListener('click', () => {
@@ -47,9 +48,8 @@ function showQuestion(question) {
             button.dataset.correct = answer.correct;
         }
         button.addEventListener('click', selectAnswer);
- //       if (button.classList('btn correct') {
-         //   console.log(score++);
-   //    }
+         console.log(button.classList = "");
+
         answerButtonsEl.appendChild(button);
     });
 
