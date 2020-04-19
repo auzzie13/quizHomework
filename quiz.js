@@ -24,8 +24,10 @@ var i = 0;
 var clock;
 var highScore = {
   name: "",
-  userScore: 0,
+  userScore: 0
 };
+
+localStorage.setItem("highScore", JSON.stringify(highScore));
 
 //event listeners
 startButton.addEventListener("click", startGame);
