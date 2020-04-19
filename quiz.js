@@ -27,7 +27,7 @@ var highScore = {
   userScore: 0
 };
 
-localStorage.setItem("highScore", JSON.stringify(highScore));
+// localStorage.setItem("highScore", JSON.stringify(highScore));
 
 //event listeners
 startButton.addEventListener("click", startGame);
