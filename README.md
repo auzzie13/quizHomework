@@ -4,7 +4,7 @@ URL:  https://auzzie13.github.io/quizHomework/
 
 # Description
 
-A timer-based quiz application that stores high scores client-side.
+A timer-based quiz application that stores high scores client-side, using local storage.
 
 # User Story
 

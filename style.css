@@ -1,106 +1,100 @@
 * {
-    box-sizing: border-box;
-    font-family: Gotham Rounded;
+  box-sizing: border-box;
+  font-family: Gotham Rounded;
 }
 
 body {
-    color:#7fe0e4;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background-color: #7fe0e4;
+  color: #7fe0e4;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #7fe0e4;
 }
 
 .container {
-    width: 800px;
-    max-width: 80%;
-    background-color: white;
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0 0 10px 2px;
-    text-align: center;
-
+  width: 800px;
+  max-width: 80%;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 10px 2px;
+  text-align: center;
 }
 
-#question {
-    font-size: 36px;
+#question,
+#highScore,
+#gameOver {
+  font-size: 36px;
 }
 
 .btn-grid {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    gap: 10px;
-    margin: 20px 0;
-
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin: 20px 0;
 }
 
-.btn {
-    background-color: #E3827F;
-    border: 1px solid #7fe0e4;
-    border-radius: 5px;
-    padding: 5px 10px;
-    color:#7fe0e4;
-    outline: none;
-    font-size: 24px;
-}
-
-#counter {
-    color: #E3827F;
+.btn,
+.input {
+  background-color: #e3827f;
+  border: 1px solid #7fe0e4;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: #7fe0e4;
+  outline: none;
+  font-size: 24px;
 }
 
 .btn:hover {
-    border-color: black;
+  border-color: black;
 }
 
 .btn.correct {
-    background-color: #9ccc9c;
+  background-color: #6fc56f;
 }
 
 .btn.wrong {
-    background-color: #ff7b7b;
+  background-color: #fd5353;
 }
 
-.start-btn, .next-btn {
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: 10px 20px;
+.start-btn,
+.next-btn,
+.restart-btn {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 20px;
 }
 
 .controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
-#timer{
-    position: absolute;
-    height : 100px;
-    width : 200px;
-    bottom : 0px;
-    text-align: center;
+#timer {
+  text-align: center;
+  font-size: 3em;
+  color: #e3827f;
 }
-#counter{
-    font-size: 3em;
+
+#score,
+#scoreNav {
+  font-size: 24px;
 }
-#btimeGauge{
-    width : 150px;
-    height : 10px;
-    border-radius: 10px;
-    background-color: lightgray;
-    margin-left : 25px;
-}
-#timeGauge{
-    height : 10px;
-    border-radius: 10px;
-    background-color: mediumseagreen;
-    margin-top : -10px;
-    margin-left : 25px;
+
+#local-storage-object {
+  background-color: #e3827f;
+  opacity: 0.6;
+  border-radius: 5px;
+  display: inline-block;
+  width: 25%;
+  margin: 20px;
 }

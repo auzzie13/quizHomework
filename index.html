@@ -10,11 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <div id="timer">
-            <div id="counter">0</div>
-            <div id="btimeGauge"></div>
-            <div id="timeGauge"></div>
-        </div>
+        <div id="timer" class="hide">10</div>
         <div id="questionContainer" class="hide">
             <div id="question">Question</div>
 
@@ -25,12 +21,30 @@
                 <button class="btn" value>Answer 4</button>
             </div>
             <div>
-                <nav>Score:<p id="score"></p></nav>
+                <nav>Score:<p id="score">0</p></nav>
+            </div>
+            <div id="local-storage-object">
+                <nav> High Score:<p id="bestScore">0</p></nav>
+                <nav> Name: <p id="username"></p></nav>
+            </div>
+        </div>
+        <div id="endGameContainer" class="hide">
+            <div id="gameOver">Game Over</div>
+
+            <div id="highScore" class="hide">You achieved a NEW HIGH SCORE!
+                <div>
+                <input class="input" type="text" placeholder="Name"/>
+                <button class="btn" id="submitBtn">Submit High Score</button>
+                 </div>
+            </div>
+            <div>
+                <nav id="scoreNav">Score:<p id="finalScore">0</p></nav>
             </div>
         </div>
         <div class="controls">
             <button id="startBtn" class="start-btn btn">Start</button>
             <button id="nextBtn" class="next-btn btn hide">Next</button>
+            <button id="restartBtn" class="restart-btn btn hide">Restart</button>
         </div>
     </div>
 
